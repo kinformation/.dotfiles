@@ -112,8 +112,8 @@ precmd() {
 ### Aliases ###
 #時刻を表示させる
 alias history='history -E'
-alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ls='ls -F --color=auto'
+alias ll='ls -lA'
 # cdコマンド実行後、lsを実行する
 function cd() {
   builtin cd $@ && ls;

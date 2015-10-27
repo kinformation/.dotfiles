@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/etc/php5/fpm/conf.d'
+let g:netrw_dirhist_2='/etc/nginx/sites-available'
+let g:netrw_dirhist_3='/etc/php5/fpm/conf.d'
+let g:netrw_dirhist_4='/etc/nginx/conf.d'
+let g:netrw_dirhist_5='/etc/wpa_supplicant'
+let g:netrw_dirhist_6='/etc/ssmtp'
+let g:netrw_dirhist_7='/usr/share/zabbix-server-mysql'
+let g:netrw_dirhist_8='/home/pi/service/mysql_buckup/.gdrive'
