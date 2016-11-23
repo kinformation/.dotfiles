@@ -21,6 +21,8 @@ set backspace=indent,eol,start " Backspaceキーの影響範囲に制限を設�
 "set scrolloff=8                " 上下8行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
+set mouse=a                    " マウス操作有効化
+set ttymouse=xterm2            " マウスホイール有効化
 
 " ファイル処理関連の設定
 
@@ -38,6 +40,13 @@ set ignorecase " 大文字と小文字を区別しない
 set smartcase  " 大文字と小文字が混在した言葉で検索を行った場合に限り、大文字と小文字を区別する
 set wrapscan   " 最後尾まで検索を終えたら次の検索で先頭に移る
 set gdefault   " 置換の時 g オプションをデフォルトで有効にする
+" Esc Esc でハイライトOFF
+nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
+" 「/」「?」「*」「#」が押されたらハイライトをONにしてから「/」「?」「*」「#」
+nnoremap / :<C-u>set hlsearch<Return>/
+nnoremap ? :<C-u>set hlsearch<Return>?
+nnoremap * :<C-u>set hlsearch<Return>*
+nnoremap # :<C-u>set hlsearch<Return>#
 
 " タブ/インデントの設定
 
@@ -71,6 +80,9 @@ set history=10000
 " ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
+
+" ESCをjjにマッピング
+inoremap <silent> jj <ESC>
 
 "-------------------------------------------------------------------------
 " NeoBundle

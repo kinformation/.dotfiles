@@ -118,3 +118,10 @@ alias ll='ls -lA'
 function cd() {
   builtin cd $@ && ls;
 }
+
+# ログイン用
+alias retropie='sshpass -p raspberry ssh pi@192.168.2.202'
+
+# rbenv
+#PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
