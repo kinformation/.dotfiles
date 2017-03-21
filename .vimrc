@@ -87,6 +87,12 @@ set noerrorbells "エラーメッセージの表示時にビープを鳴らさ�
 " ESCをjjにマッピング
 inoremap <silent> jj <ESC>
 
+" ファイル展開時に最後にカーソルがあった場所に移動
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ exe "normal g`\"" | endif
+augroup END
+
 "-------------------------------------------------------------------------
 " NeoBundle
 " setup
