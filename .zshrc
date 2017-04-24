@@ -104,19 +104,25 @@ precmd() {
     esac
 }
 
-
 # ------------------------------
 # Other Settings
 # ------------------------------
 
 ### Aliases ###
-#時刻を表示させる
 alias history='history -E'
 alias ls='ls -F --color=auto'
 alias ll='ls -lA'
-# cdコマンド実行後、lsを実行する
+
+# cd コマンドカスタム
 function cd() {
-  builtin cd $@ && ls;
+  # cd file でそのfileのあるディレクトリに移動する
+  if [[ -e $1 && ! -d $1 ]]; then
+    f="$(dirname $1)"
+  else
+    f="$@"
+  fi
+  # cdコマンド実行後、lsを実行する
+  builtin cd $f && ls
 }
 
 # ログイン用

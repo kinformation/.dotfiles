@@ -109,6 +109,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " plugins
 " NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'aperezdc/vim-template'
 
 call neobundle#end()
 filetype plugin indent on

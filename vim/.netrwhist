@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/pi/www/fishlive'
 let g:netrw_dirhist_2='/etc/webiopi'
 let g:netrw_dirhist_3='/home/pi/test'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home/pi/www/angularjs/controller'
 let g:netrw_dirhist_6='/home/pi/dotfiles'
 let g:netrw_dirhist_7='/home/pi/.dotfiles/vim/bundle/neobundle.vim'
 let g:netrw_dirhist_8='/home/pi/.dotfiles'
+let g:netrw_dirhist_9='/home/pi/www/kaoninshiki/uploader'
