@@ -112,6 +112,7 @@ precmd() {
 alias history='history -E'
 alias ls='ls -F --color=auto'
 alias ll='ls -lA'
+alias diff='diff -up'
 
 # cd コマンドカスタム
 function cd() {
