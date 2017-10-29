@@ -8,13 +8,14 @@ export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
 
-bindkey -e              # キーバインドをviモードに設定
+bindkey -e               # キーバインドをviモードに設定
 
+setopt auto_cd           # ディレクトリ名だけでcdする
 setopt auto_pushd        # cd時にディレクトリスタックにpushdする
+setopt pushd_ignore_dups # 重複したディレクトリを追加しない
 setopt correct           # コマンドのスペルを訂正する
 setopt prompt_subst      # プロンプト定義内で変数置換やコマンド置換を扱う
 setopt notify            # バックグラウンドジョブの状態変化を即時報告する
-#setopt equals            # =commandを`which command`と同じ処理にする
 
 ### Complement ###
 autoload -U compinit; compinit # 補完機能を有効にする
@@ -112,6 +113,7 @@ precmd() {
 alias history='history -E'
 alias ls='ls -F --color=auto'
 alias ll='ls -lA'
+alias la='ls -a'
 alias diff='diff -up'
 
 # cd コマンドカスタム
