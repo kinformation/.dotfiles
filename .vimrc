@@ -6,7 +6,7 @@ colorscheme desert
 
 " 画面表示の設定
 
-set number         " 行番号を表示する
+"set number         " 行番号を表示する
 set laststatus=2   " ステータス行を常に表示
 set showmatch      " 対応する括弧を強調表示
 "set helpheight=999 " ヘルプを画面いっぱいに開く
@@ -57,8 +57,8 @@ set expandtab     " タブ入力を複数の空白入力に置き換える
 set tabstop=2     " 画面上でタブ文字が占める幅
 set shiftwidth=2  " 自動インデントでずれる幅
 set softtabstop=2 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set autoindent    " 改行時に前の行のインデントを継続する
-set smartindent   " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+"set autoindent    " 改行時に前の行のインデントを継続する
+"set smartindent   " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
 " 動作環境との統合関連の設定
 
@@ -92,25 +92,3 @@ augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
         \ exe "normal g`\"" | endif
 augroup END
-
-"-------------------------------------------------------------------------
-" NeoBundle
-" setup
-if 0 | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" plugins
-" NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'aperezdc/vim-template'
-
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck

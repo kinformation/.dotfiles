@@ -1,2 +1,0 @@
-3.0
-{'neobundle.vim': {'checked_time': 1509161972, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/home/pi/.vim/bundle/neobundle.vim', 'revisions': {}, 'updated_time': 1509161972}, 'vim-template': {'checked_time': 1509161977, 'installed_uri': 'https://github.com/aperezdc/vim-template.git', 'installed_path': '/home/pi/.vim/bundle/vim-template', 'revisions': {'1504602981': '606d5d419bd07e4085fd95ee578d03f35088c844'}, 'updated_time': '1504602981'}}
