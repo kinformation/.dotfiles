@@ -62,7 +62,18 @@ export ZLS_COLORS=$LS_COLORS
 # lsコマンド時、自動で色がつく(ls -Gのようなもの？)
 export CLICOLOR=true
 # 補完候補に色を付ける
+autoload -Uz compinit
+compinit
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+zstyle ':completion:*' group-name ''
 
 ### Prompt ###
 # プロンプトに色を付ける
@@ -128,9 +139,17 @@ function cd() {
   builtin cd $f && ls
 }
 
-# ログイン用
-alias retropie='sshpass -p raspberry ssh pi@192.168.2.202'
+# ------------------------------
+# zplugin
+# ------------------------------
+if [[ ! -d $HOME/.zplugin ]]; then
+  mkdir $HOME/.zplugin
+  git clone https://github.com/zdharma/zplugin.git $HOME/.zplugin/
+fi
 
-# rbenv
-#PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
+source $HOME/.zplugin/zplugin.zsh
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+
+#zplugin light zsh-users/zsh-autosuggestions
+zplugin light zdharma/fast-syntax-highlighting
